@@ -98,7 +98,7 @@ class PomodoroTimerSwitch: SwitchProvider {
     }
     
     func startTimer() {
-        nextDate = .now + TimeInterval(workDuration + 1)
+        nextDate = Date() + TimeInterval(workDuration + 1)
         status = .work
         DispatchQueue.main.async {
             self.restTimer = Timer(timeInterval: TimeInterval(self.workDuration + 1), repeats: false) { timer in
@@ -112,7 +112,7 @@ class PomodoroTimerSwitch: SwitchProvider {
                                                    subtitle: "Time's up.".localized())
                         .runAppleScript()
                 }
-                self.nextDate = .now + TimeInterval(self.restDuration + 1)
+                self.nextDate = Date() + TimeInterval(self.restDuration + 1)
                 self.status = .rest
             }
             

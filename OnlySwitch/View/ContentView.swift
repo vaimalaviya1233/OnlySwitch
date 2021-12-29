@@ -46,7 +46,7 @@ struct ContentView: View {
     var recommendApp: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(colorScheme == .dark ? Color(nsColor: NSColor.darkGray) : .white)
+                        .foregroundColor(colorScheme == .dark ? Color( NSColor.darkGray) : .white)
                         .frame(height: 45)
             HStack() {
                 Spacer()
